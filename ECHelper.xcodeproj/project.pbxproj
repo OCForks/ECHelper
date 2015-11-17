@@ -91,7 +91,7 @@
 		2299A91414A3A56000729830 /* ECUnixPorts.m in Sources */ = {isa = PBXBuildFile; fileRef = 2299A90E14A3A56000729830 /* ECUnixPorts.m */; };
 		4BE4905110445D49006BE471 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4904D10445D49006BE471 /* main.m */; };
 		4BE4906410445F2F006BE471 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE4906310445F2F006BE471 /* Security.framework */; };
-		4BE49092104463A0006BE471 /* com.elegantchaos.helper.helper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4BE4905D10445E0A006BE471 /* com.elegantchaos.helper.helper */; };
+		4BE49092104463A0006BE471 /* com.elegantchaos.helper.helper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4BE4905D10445E0A006BE471 /* com.elegantchaos.helper.helper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		BF04235611C0531400431286 /* HostAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF04235511C0531400431286 /* HostAppController.m */; };
 		BF65C19111B985C0007C20AB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF65C19011B985C0007C20AB /* MainMenu.xib */; };
 /* End PBXBuildFile section */
@@ -579,7 +579,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0710;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ECHelper" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -772,6 +772,7 @@
 					__launchd_plist,
 					"Helper/Processed-Launchd.plist",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${HOST_ID}";
 				PRODUCT_NAME = "${HELPER_ID}";
 			};
 			name = Debug;
@@ -795,6 +796,7 @@
 					__launchd_plist,
 					"Helper/Processed-Launchd.plist",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${HOST_ID}";
 				PRODUCT_NAME = "${HELPER_ID}";
 			};
 			name = Release;
@@ -803,11 +805,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = "Host/Processed-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_BUNDLE_IDENTIFIER = "${HOST_ID}";
 				PRODUCT_NAME = host;
 			};
 			name = Debug;
@@ -816,9 +820,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = "Host/Processed-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_BUNDLE_IDENTIFIER = "${HOST_ID}";
 				PRODUCT_NAME = host;
 			};
 			name = Release;
@@ -827,8 +833,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 227E267C149B53AA00E04B27 /* Settings.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CODE_SIGN_IDENTITY = "${HELPER_SIGNING}";
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = "ECFoundation/Modules/ECCore/Prefix/ECCore$(CONFIGURATION)Prefix.pch";
@@ -845,7 +851,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 227E267C149B53AA00E04B27 /* Settings.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CODE_SIGN_IDENTITY = "${HELPER_SIGNING}";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREFIX_HEADER = "ECFoundation/Modules/ECCore/Prefix/ECCore$(CONFIGURATION)Prefix.pch";

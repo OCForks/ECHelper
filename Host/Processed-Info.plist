@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>${HOST_ID}</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -23,7 +23,7 @@
 	<key>SMPrivilegedExecutables</key>
 	<dict>
 		<key>com.elegantchaos.helper.helper</key>
-		<string>identifier com.elegantchaos.helper.helper and certificate leaf[subject.CN] = &quot;3rd Party Mac Developer Application: Sam Deane&quot;</string>
+		<string>identifier com.elegantchaos.helper.helper and certificate leaf[subject.CN] = "3rd Party Mac Developer Application: Sam Deane"</string>
 	</dict>
 </dict>
 </plist>

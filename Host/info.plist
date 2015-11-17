@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>${HOST_ID}</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -23,7 +23,7 @@
 	<key>SMPrivilegedExecutables</key>
 	<dict>
 		<key>${HELPER_ID}</key>
-		<string>identifier ${HELPER_ID} and certificate leaf[subject.CN] = &quot;${HELPER_SIGNING}&quot;</string>
+		<string>identifier ${HELPER_ID} and certificate leaf[subject.CN] = "${HELPER_SIGNING}"</string>
 	</dict>
 </dict>
 </plist>
